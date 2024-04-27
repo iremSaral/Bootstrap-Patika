@@ -1,2 +1,2 @@
-# Bootstrap-Patika
-Patika.dev Bootstrap Eğitimi Ödevleri
+# instagrambootstrapclone
+Simple HTML Instagram clone made with Bootstrap.

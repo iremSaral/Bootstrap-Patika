@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mirac Beyazpinar</title>
+      <style> 
+		#main-container
+			 {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+			 overflow: auto; background-color: #1E2A38; border-radius: 15px; max-width: 300px; height: 400px;}
+      		#main 
+			{border-radius: 15px; padding: 20px;}
+       		#front_frame 
+			{position: relative; background-color: #243447; margin: 0 auto 5px; 
+			      			border-radius: 10px; padding: 5px; width: 98%; font-size: 12px; text-align: left;}
+       		#ssid-rssi
+			 {display: flex; flex-direction: column; position: relative;}
+       		#ssid-rssi  
+			{margin: 5px 0;} /* Boşluk azaltma*/
+       		#button-container 
+			{position: absolute; bottom: 0; right: 0;}
+      		#connect-button 
+			{background-color: #4682b4; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;}
+		.hidden 
+			{ display: none; }
+       	</style>
+		<script>
+  			function showCredentials(ssid) {var credentialsContainer = document.getElementById('credentials-container');
+  		  		if (credentialsContainer) {credentialsContainer.classList.toggle('hidden');
+  		  		   var passwordInput = document.getElementById('passwordInput');
+  			           passwordInput.focus();
+  		                   document.getElementById('selectedSSID').value = ssid;
+  		                  }
+  				}
+  			function connectToWiFi() {var ssid = document.getElementById('selectedSSID').value;
+  		  		   var password = document.getElementById('passwordInput').value;
+  		 		   window.location = '/connect?ssid=' + ssid + '&password=' + password;
+  		                 }
+  		</script>
+     </head>
+       <body>
+		<div id='main-container'>
+		<div id='main'>
+
+
+		<p>    </p>
+
+       		
+       		<div id='front_frame' onclick=showCredentials + WiFi.SSID(i) +>
+       		<div id='ssid-rssi'><p><font color='#9EBBD3'; size='+1'><b>SSID: </b>" + WiFi.SSID(i) + "</font></p></div><div id='ssid-rssi'> <p> <font color='#9EBBD3'; size='+1'> <b> ag SSID: </b></font></p>
+		<div id='credentials-container' class='hidden'>
+	      <form>
+		<input type='hidden' id='selectedSSID' name='selectedSSID' value=''>
+		<label for='passwordInput'>Parola:</label>
+		<input type='password' id='passwordInput' name='passwordInput' placeholder='Parola'>
+		<br>
+		<input type='button' value='Baglan' onclick=connectToWiFi();>
+		</form>
+       		</div>
+		</div>
+       		</div>
+       		</div>
+       		
+        
+       </body>
+     </html>
